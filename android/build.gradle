@@ -1,0 +1,27 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.2'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22'
+    }
+}
+
+plugins {
+    id 'com.android.application' version '8.2.2' apply false
+    id 'org.jetbrains.kotlin.android' version '1.9.22' apply false
+}
+
+// Root Gradle task to copy the debug APK into .build-outputs
+tasks.register('copyDebugApk', Copy) {
+    dependsOn ':app:assembleDebug'
+    from "${rootDir}/app/build/outputs/apk/debug"
+    include "*.apk"
+    into "${rootDir}/../.build-outputs"
+    rename { "app-debug.apk" }
+    doLast {
+        println ">>> Copied Debug APK to .build-outputs/app-debug.apk <<<"
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "MEDR By Saj - Smart Medication Reminder",
+  "description": "Offline multi-user medication schedule manager with adherence tracking, custom schedules, and reminders.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="50%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="pillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- App Background (Squircle) -->
+  <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle circular grid / radar effect -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="white" stroke-width="4" stroke-opacity="0.15" stroke-dasharray="12 12"/>
+  <circle cx="256" cy="256" r="130" fill="none" stroke="white" stroke-width="3" stroke-opacity="0.1"/>
+
+  <!-- Pill & Clock Composition -->
+  <g filter="url(#shadow)" transform="translate(256,256) rotate(-35) translate(-256,-256)">
+    <!-- Pill Capsule Body Left half -->
+    <path d="M 170 196 C 170 140, 215 110, 256 110 L 256 370 C 215 370, 170 340, 170 284 Z" fill="#ffffff" />
+    <!-- Pill Capsule Body Right half -->
+    <path d="M 256 110 C 297 110, 342 140, 342 196 L 342 284 C 342 340, 297 370, 256 370 Z" fill="#0284c7" />
+    
+    <!-- Capsule middle cut line -->
+    <line x1="256" y1="108" x2="256" y2="372" stroke="#0f172a" stroke-width="6" stroke-opacity="0.2"/>
+    
+    <!-- Heartbeat / Wave pulse line inside pill -->
+    <path d="M 195 240 L 230 240 L 245 210 L 265 270 L 280 230 L 295 240 L 320 240" fill="none" stroke="#f43f5e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Small Clock Badge floating bottom right -->
+  <g transform="translate(325, 325)" filter="url(#shadow)">
+    <circle cx="36" cy="36" r="44" fill="#ffffff"/>
+    <circle cx="36" cy="36" r="38" fill="#10b981"/>
+    <!-- Clock Hands at 08:00 -->
+    <circle cx="36" cy="36" r="4" fill="#ffffff"/>
+    <line x1="36" y1="36" x2="36" y2="16" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+    <line x1="36" y1="36" x2="22" y2="44" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>
